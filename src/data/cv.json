@@ -1,0 +1,113 @@
+{
+  "name": "Ayodamope Medupin",
+  "title": "Senior Frontend Developer & IT Platform Specialist",
+  "contact": {
+    "email": "ayodamopemedupin@gmail.com",
+    "phone": "09069780664",
+    "whatsapp": "09061856973",
+    "location": "Lagos, Nigeria",
+    "linkedin": "https://linkedin.com/in/ayodamope-medupin",
+    "github": "https://github.com/d4mz3y"
+  },
+  "summary": "With over 4 years of cross-functional expertise, I have engineered 5+ high-impact platforms from the ground up—bridging the gap between sleek frontend architecture and robust system security. From scaling fintech interfaces at Innovated Funded to architecting identity-first modular systems at Hogan Tech, I specialize in delivering code that doesn't just work, but scales and secures.",
+  "stats": [
+    {
+      "label": "Years Experience",
+      "value": "4+"
+    },
+    {
+      "label": "Platforms Built",
+      "value": "5+"
+    },
+    {
+      "label": "Tech Stack",
+      "value": "12+"
+    },
+    {
+      "label": "Focus",
+      "value": "100%"
+    }
+  ],
+  "experience": [
+    {
+      "platform": "Hogan Hub",
+      "company": "Hogan Tech",
+      "usage": "Internal modular platform for managing users, permissions, and operational access.",
+      "tools": [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "System Security"
+      ],
+      "image": "/projects/hogan_hub.png",
+      "demoLink": "/demos/hogan_hub.html"
+    },
+    {
+      "platform": "Fintech Infrastructure",
+      "company": "Innovated Funded",
+      "usage": "Responsive investment platform and fintech landing page infrastructure.",
+      "tools": [
+        "Vue.js",
+        "Nuxt.js",
+        "Tailwind CSS",
+        "TypeScript"
+      ],
+      "image": "/projects/innovated_funded.png",
+      "demoLink": "/demos/innovated_funded.html"
+    },
+    {
+      "platform": "LMS Portal",
+      "company": "Classon Education",
+      "usage": "Comprehensive E-learning platform with interactive course modules.",
+      "tools": [
+        "React",
+        "Framer Motion",
+        "Tailwind CSS",
+        "Design Systems"
+      ],
+      "image": "/projects/classon_education.png",
+      "demoLink": "/demos/classon_education.html"
+    },
+    {
+      "platform": "Missions Info System",
+      "company": "The Redeemed School",
+      "usage": "Full-stack administrative portal for student and institutional management.",
+      "tools": [
+        "Node.js",
+        "SQL",
+        "PHP",
+        "Bootstrap"
+      ],
+      "image": "/projects/redeemed_school.png",
+      "demoLink": "/demos/redeemed_school.html"
+    }
+  ],
+  "skills": {
+    "frontend": [
+      "React.js",
+      "Vue.js",
+      "Nuxt.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "SCSS"
+    ],
+    "backend": [
+      "Node.js",
+      "PHP",
+      "SQL",
+      "ORM tools",
+      "RESTful APIs",
+      "Authentication (JWT, role-based access)"
+    ],
+    "tools": [
+      "Git",
+      "Figma",
+      "Linux System Administration",
+      "Deployment & Configuration Support",
+      "Enterprise IT Support"
+    ]
+  }
+}
