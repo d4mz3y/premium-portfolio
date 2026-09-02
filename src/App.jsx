@@ -251,9 +251,9 @@ const Experience = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex items-end p-6 sm:p-8 opacity-0 group-hover:opacity-100 transition-all duration-500">
                       <div className="flex flex-col gap-2">
-                        <span className="text-primary-400 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] bg-primary-400/10 px-3 py-1 rounded-full w-fit">Live Prototype</span>
+                        <span className="text-primary-400 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] bg-primary-400/10 px-3 py-1 rounded-full w-fit">UI Concept</span>
                         <div className="mt-4 flex items-center gap-2 text-primary-400 font-black text-xs sm:text-sm uppercase tracking-widest hover:text-white transition-colors underline decoration-2 underline-offset-4">
-                          Explore Experience <ExternalLink size={16} />
+                          View Concept <ExternalLink size={16} />
                         </div>
                       </div>
                     </div>

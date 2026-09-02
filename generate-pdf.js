@@ -1,13 +1,18 @@
 import { PDFDocument } from 'pdf-lib';
-import fs from 'fs';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const publicDir = path.join(__dirname, 'public');
 
 async function createPdf() {
     const pdfDoc = await PDFDocument.create();
 
     const pages = [
-        '/home/damxey/.gemini/antigravity/scratch/premium-portfolio/public/cv-page-1.jpg',
-        '/home/damxey/.gemini/antigravity/scratch/premium-portfolio/public/cv-page-2.jpg',
-        '/home/damxey/.gemini/antigravity/scratch/premium-portfolio/public/cv-page-3.jpg'
+        path.join(publicDir, 'cv-page-1.jpg'),
+        path.join(publicDir, 'cv-page-2.jpg'),
+        path.join(publicDir, 'cv-page-3.jpg'),
     ];
 
     for (const pagePath of pages) {
@@ -23,8 +28,9 @@ async function createPdf() {
     }
 
     const pdfBytes = await pdfDoc.save();
-    fs.writeFileSync('/home/damxey/.gemini/antigravity/scratch/premium-portfolio/public/cv.pdf', pdfBytes);
-    console.log('PDF created successfully at /home/damxey/.gemini/antigravity/scratch/premium-portfolio/public/cv.pdf');
+    const outputPath = path.join(publicDir, 'cv.pdf');
+    fs.writeFileSync(outputPath, pdfBytes);
+    console.log(`PDF created successfully at ${outputPath}`);
 }
 
 createPdf().catch(err => console.error(err));
