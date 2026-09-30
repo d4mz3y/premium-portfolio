@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowUpRight, Lock, CheckCircle2, Github } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Lock, Github } from 'lucide-react';
 import projects, { getProjectBySlug } from '../data/projects.js';
 import { Navbar, Footer } from './Home.jsx';
 
@@ -19,25 +19,21 @@ function ProjectPage() {
   const next = projects[(idx + 1) % projects.length];
 
   return (
-    <div className="min-h-screen bg-black selection:bg-primary-500/30">
+    <div className="min-h-screen bg-ink-950 selection:bg-accent-500/30">
       <Navbar />
 
-      <header className="relative pt-36 pb-16 px-6 overflow-hidden">
-        <div className="absolute top-0 -left-20 w-72 h-72 bg-primary-600/20 rounded-full blur-[120px]" />
-        <div className="max-w-5xl mx-auto relative z-10">
-          <Link to="/#projects" className="inline-flex items-center gap-2 text-sm font-semibold text-white/50 hover:text-white transition-colors mb-8">
-            <ArrowLeft size={16} /> Back to portfolio
+      <header className="pt-36 pb-12 px-6">
+        <div className="max-w-4xl mx-auto">
+          <Link to="/#work" className="label-mono inline-flex items-center gap-2 text-xs text-ink-400 hover:text-accent-400 transition-colors mb-10" data-cursor-hover>
+            <ArrowLeft size={14} /> Back to work
           </Link>
 
-          <div className="flex flex-wrap items-center gap-3 mb-6">
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary-400 bg-primary-400/10 px-3 py-1 rounded-full">
-              {project.category}
-            </span>
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 border border-white/10 px-3 py-1 rounded-full">
-              {project.year}
-            </span>
+          <div className="flex flex-wrap items-center gap-3 mb-6 label-mono text-[11px]">
+            <span className="text-accent-400">{project.category}</span>
+            <span className="text-ink-600">·</span>
+            <span className="text-ink-500">{project.year}</span>
             {project.isPrivate ? (
-              <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white/40 border border-white/10 px-3 py-1 rounded-full">
+              <span className="flex items-center gap-1.5 text-ink-500">
                 <Lock size={11} /> Private repository
               </span>
             ) : (
@@ -45,23 +41,24 @@ function ProjectPage() {
                 href={project.repoUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white/60 hover:text-primary-400 border border-white/10 hover:border-primary-500/40 px-3 py-1 rounded-full transition-colors"
+                className="flex items-center gap-1.5 text-ink-400 hover:text-accent-400 transition-colors"
+                data-cursor-hover
               >
                 <Github size={11} /> View code <ArrowUpRight size={11} />
               </a>
             )}
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 leading-[1.05] tracking-tight text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-light leading-[1.05] text-ink-50 mb-6">
             {project.name}
           </h1>
-          <p className="text-lg sm:text-xl text-white/60 max-w-2xl leading-relaxed mb-10">
+          <p className="text-lg text-ink-400 max-w-2xl leading-relaxed mb-10 font-light">
             {project.tagline}
           </p>
 
           <div className="flex flex-wrap gap-2">
             {project.tech.map((t) => (
-              <span key={t} className="text-xs font-bold uppercase tracking-wider text-white/50 border border-white/5 px-3 py-1.5 rounded-lg bg-white/[0.02]">
+              <span key={t} className="label-mono text-[10px] text-ink-400 border border-ink-700 px-3 py-1.5 rounded">
                 {t}
               </span>
             ))}
@@ -70,25 +67,25 @@ function ProjectPage() {
       </header>
 
       {project.image && (
-        <div className="max-w-5xl mx-auto px-6 mb-10">
+        <div className="max-w-4xl mx-auto px-6 mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+            className="overflow-hidden border border-ink-700"
           >
             <img src={project.image} alt={project.name} className="w-full h-auto block" />
           </motion.div>
           {project.imageNote && (
-            <p className="text-xs text-white/30 mt-3 italic">{project.imageNote}</p>
+            <p className="text-xs text-ink-600 mt-3 italic font-light">{project.imageNote}</p>
           )}
         </div>
       )}
 
       {project.isPrivate && (
-        <div className="max-w-5xl mx-auto px-6 mb-4">
-          <div className="flex items-start gap-3 text-sm text-white/50 bg-white/[0.02] border border-white/5 rounded-xl px-5 py-4">
-            <Lock size={16} className="mt-0.5 shrink-0 text-white/30" />
+        <div className="max-w-4xl mx-auto px-6 mb-4">
+          <div className="flex items-start gap-3 text-sm text-ink-400 border border-ink-700 px-5 py-4 font-light">
+            <Lock size={16} className="mt-0.5 shrink-0 text-ink-600" />
             <span>
               This is proprietary / commercial work — the source stays private, so this page is a written case study rather than a code walkthrough.
             </span>
@@ -96,15 +93,15 @@ function ProjectPage() {
         </div>
       )}
 
-      <main className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
+      <main className="max-w-4xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
         <div className="md:col-span-2 space-y-12">
           <section>
-            <h2 className="text-xs font-black uppercase tracking-[0.3em] text-white/30 mb-4">Overview</h2>
-            <p className="text-white/70 text-lg leading-relaxed">{project.summary}</p>
+            <span className="label-mono text-xs text-accent-400 block mb-4">Overview</span>
+            <p className="text-ink-300 text-lg leading-relaxed font-light">{project.summary}</p>
           </section>
 
           <section>
-            <h2 className="text-xs font-black uppercase tracking-[0.3em] text-white/30 mb-6">What it does</h2>
+            <span className="label-mono text-xs text-accent-400 block mb-6">What it does</span>
             <ul className="space-y-4">
               {project.highlights.map((h, i) => (
                 <motion.li
@@ -113,9 +110,8 @@ function ProjectPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="flex items-start gap-3 text-white/70 leading-relaxed"
+                  className="flex items-start gap-3 text-ink-300 leading-relaxed font-light border-l border-ink-700 pl-4"
                 >
-                  <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-primary-400" />
                   <span>{h}</span>
                 </motion.li>
               ))}
@@ -124,27 +120,28 @@ function ProjectPage() {
         </div>
 
         <aside className="space-y-8">
-          <div className="glass-card">
-            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-white/30 mb-3">Role</h3>
-            <p className="text-white font-bold">{project.role}</p>
+          <div className="card">
+            <span className="label-mono text-xs text-ink-500 block mb-3">Role</span>
+            <p className="text-ink-50 font-display text-lg">{project.role}</p>
           </div>
-          <div className="glass-card">
-            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-white/30 mb-3">Impact</h3>
-            <p className="text-white/70 text-sm leading-relaxed">{project.impact}</p>
+          <div className="card">
+            <span className="label-mono text-xs text-ink-500 block mb-3">Impact</span>
+            <p className="text-ink-300 text-sm leading-relaxed font-light">{project.impact}</p>
           </div>
         </aside>
       </main>
 
-      <div className="max-w-5xl mx-auto px-6 pb-24">
+      <div className="max-w-4xl mx-auto px-6 pb-24">
         <Link
           to={`/projects/${next.slug}`}
-          className="group flex items-center justify-between glass-card hover:border-primary-500/40 transition-all"
+          className="group flex items-center justify-between card hover:border-accent-500/50 transition-all"
+          data-cursor-hover
         >
           <div>
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 block mb-1">Next project</span>
-            <span className="text-xl font-black text-white group-hover:text-primary-400 transition-colors">{next.name}</span>
+            <span className="label-mono text-xs text-ink-500 block mb-1">Next project</span>
+            <span className="font-display text-xl text-ink-50 group-hover:text-accent-400 transition-colors">{next.name}</span>
           </div>
-          <ArrowUpRight size={22} className="text-white/30 group-hover:text-primary-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+          <ArrowUpRight size={20} className="text-ink-600 group-hover:text-accent-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
         </Link>
       </div>
 
