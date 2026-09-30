@@ -225,11 +225,37 @@ const Hero = () => {
   );
 };
 
+const Marquee = () => {
+  const items = ['Frontend Engineering', 'System Security', 'Platform Architecture', 'Lagos, Nigeria', 'Available for Opportunities'];
+  const track = [...items, ...items];
+  return (
+    <div className="relative py-6 border-y border-white/5 overflow-hidden bg-white/[0.015]">
+      <div className="flex whitespace-nowrap animate-marquee w-max">
+        {track.map((item, i) => (
+          <span key={i} className="flex items-center text-sm font-bold uppercase tracking-[0.3em] text-white/25 mx-6">
+            {item}
+            <span className="ml-6 text-primary-400/50">&#9670;</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Eyebrow = ({ index, label }) => (
+  <div className="flex items-center gap-3 mb-5 justify-center md:justify-start">
+    <span className="text-xs font-black font-mono text-primary-400/70">{index}</span>
+    <span className="h-px w-8 bg-primary-400/40" />
+    <span className="text-xs font-black uppercase tracking-[0.3em] text-white/40">{label}</span>
+  </div>
+);
+
 const Experience = () => {
   return (
     <section id="experience" className="py-20 px-6 bg-white/[0.02]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center md:text-left">
+          <Eyebrow index="01" label="Experience" />
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter text-white">Selected <span className="text-gradient leading-normal">Platforms</span></h2>
           <p className="text-sm sm:text-base text-white/50 mb-8 max-w-2xl mx-auto md:mx-0 font-medium">Solving complex problems through architecture and refined UX—built to scale.</p>
           <div className="h-1.5 w-24 bg-gradient-to-r from-primary-500 to-transparent rounded-full mx-auto md:mx-0"></div>
@@ -311,6 +337,7 @@ const ProjectsGallery = () => {
     <section id="projects" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center md:text-left">
+          <Eyebrow index="02" label="Projects" />
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter text-white">
             The <span className="text-gradient leading-normal">Archive</span>
           </h2>
@@ -399,7 +426,8 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-12 text-center">
+        <div className="mb-12 text-center flex flex-col items-center">
+          <Eyebrow index="03" label="Capabilities" />
           <h2 className="text-3xl md:text-5xl font-black mb-4 uppercase tracking-tighter text-white">Tech <span className="text-gradient">Stack</span></h2>
           <p className="text-white/50">My specialized toolkit for building digital experiences.</p>
         </div>
@@ -491,6 +519,7 @@ function Home() {
     <div className="min-h-screen bg-black selection:bg-primary-500/30">
       <Navbar />
       <Hero />
+      <Marquee />
       <Experience />
       <ProjectsGallery />
       <Skills />

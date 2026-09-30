@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight, Lock, CheckCircle2, Github } from 'lucide-react';
@@ -8,6 +8,10 @@ import { Navbar, Footer } from './Home.jsx';
 function ProjectPage() {
   const { slug } = useParams();
   const project = getProjectBySlug(slug);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
 
   if (!project) return <Navigate to="/" replace />;
 
