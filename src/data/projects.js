@@ -12,6 +12,7 @@ const projects = [
     year: '2026',
     isPrivate: true,
     repoUrl: null,
+    image: '/case-studies/hg-attendance-login.png',
     role: 'Sole developer & operator',
     summary:
       'An internal attendance, scheduling, leave, and reporting system built for Hogan Guards’ on-the-ground security workforce. Runs in production on a self-hosted Docker stack with an offline-capable kiosk for clock-in/out.',
@@ -36,6 +37,7 @@ const projects = [
     year: '2026',
     isPrivate: true,
     repoUrl: null,
+    image: '/case-studies/hogan-hub.png',
     role: 'Sole developer',
     summary:
       'A role-based operations platform for Hogan Tech: separate access tiers for Super Admin, Client Admin, and Field Guard, covering user/permission management, patrol operations, threat intel, and emergency SOS handling.',
@@ -58,6 +60,7 @@ const projects = [
     year: '2026',
     isPrivate: false,
     repoUrl: 'https://github.com/d4mz3y/phishing-detection-app',
+    image: '/case-studies/phishing-detection-result.png',
     role: 'Sole developer & researcher',
     summary:
       'A runnable multimodal deep-learning system that combines DistilBERT email-text embeddings with a metadata neural network and late fusion, served through a Flask dashboard with real-time predictions and explainability.',
@@ -80,6 +83,7 @@ const projects = [
     year: '2026',
     isPrivate: false,
     repoUrl: 'https://github.com/d4mz3y/AdVanta-AI',
+    image: '/case-studies/advanta-ai.png',
     role: 'Frontend developer',
     summary:
       'A full marketing site for an AI-driven growth product — hero, problem framing, services, process, audience segmentation, pricing, and conversion sections, built as independent, composable React components.',
@@ -99,6 +103,7 @@ const projects = [
     year: '2026',
     isPrivate: false,
     repoUrl: 'https://github.com/d4mz3y/Library-Project',
+    image: '/case-studies/library-project.png',
     role: 'Sole developer',
     summary:
       'An ambitious digital-library concept that goes beyond a book catalog: books, audiobooks, podcasts, live chatrooms, even a chess page, backed by a Prisma-modeled database and built on Nuxt 3.',
@@ -118,6 +123,7 @@ const projects = [
     year: '2026',
     isPrivate: false,
     repoUrl: 'https://github.com/d4mz3y/Feedback-System',
+    image: '/case-studies/feedback-system.png',
     role: 'Sole developer',
     summary:
       'Replaces the paper Know-Your-Client form used when onboarding a new client for guard deployment, with real-time validation, automated email notifications, and an admin dashboard to review submissions.',
@@ -138,6 +144,8 @@ const projects = [
     year: '2022',
     isPrivate: true,
     repoUrl: null,
+    image: '/case-studies/invoice-generator.png',
+    imageNote: 'Shown with placeholder data — the live version contains real client and payment details.',
     role: 'Sole developer',
     summary:
       'A lightweight, dependency-free invoice generator: a live-editable, print-ready proforma/invoice template with auto-calculated totals, built for real client billing use.',

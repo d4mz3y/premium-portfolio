@@ -69,6 +69,22 @@ function ProjectPage() {
         </div>
       </header>
 
+      {project.image && (
+        <div className="max-w-5xl mx-auto px-6 mb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+          >
+            <img src={project.image} alt={project.name} className="w-full h-auto block" />
+          </motion.div>
+          {project.imageNote && (
+            <p className="text-xs text-white/30 mt-3 italic">{project.imageNote}</p>
+          )}
+        </div>
+      )}
+
       {project.isPrivate && (
         <div className="max-w-5xl mx-auto px-6 mb-4">
           <div className="flex items-start gap-3 text-sm text-white/50 bg-white/[0.02] border border-white/5 rounded-xl px-5 py-4">

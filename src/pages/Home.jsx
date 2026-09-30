@@ -358,37 +358,51 @@ const ProjectsGallery = () => {
             >
               <Link
                 to={`/projects/${project.slug}`}
-                className="group relative block h-full p-6 rounded-2xl border border-white/8 bg-white/[0.02] hover:bg-white/[0.04] hover:border-primary-500/40 transition-all duration-500 overflow-hidden"
+                className="group relative flex flex-col h-full rounded-2xl border border-white/8 bg-white/[0.02] hover:bg-white/[0.04] hover:border-primary-500/40 transition-all duration-500 overflow-hidden"
               >
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {project.image && (
+                  <div className="relative aspect-video overflow-hidden border-b border-white/5 bg-white/[0.02]">
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  </div>
+                )}
 
-                <div className="relative flex items-start justify-between mb-5">
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30">{project.category}</span>
-                  {project.isPrivate ? (
-                    <Lock size={14} className="text-white/25" />
-                  ) : (
-                    <ArrowUpRight size={16} className="text-white/25 group-hover:text-primary-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                  )}
-                </div>
+                <div className="relative p-6 flex flex-col flex-1">
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                <h3 className="relative text-xl font-black text-white mb-2 tracking-tight group-hover:text-primary-400 transition-colors">
-                  {project.name}
-                </h3>
-                <p className="relative text-sm text-white/50 leading-relaxed mb-5 line-clamp-2">
-                  {project.tagline}
-                </p>
+                  <div className="relative flex items-start justify-between mb-5">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30">{project.category}</span>
+                    {project.isPrivate ? (
+                      <Lock size={14} className="text-white/25" />
+                    ) : (
+                      <ArrowUpRight size={16} className="text-white/25 group-hover:text-primary-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    )}
+                  </div>
 
-                <div className="relative flex flex-wrap gap-1.5">
-                  {project.tech.slice(0, 3).map((t) => (
-                    <span key={t} className="text-[9px] font-bold uppercase tracking-wider text-white/40 border border-white/5 px-2 py-1 rounded-md bg-white/[0.02]">
-                      {t}
-                    </span>
-                  ))}
-                  {project.tech.length > 3 && (
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-white/25 px-2 py-1">
-                      +{project.tech.length - 3}
-                    </span>
-                  )}
+                  <h3 className="relative text-xl font-black text-white mb-2 tracking-tight group-hover:text-primary-400 transition-colors">
+                    {project.name}
+                  </h3>
+                  <p className="relative text-sm text-white/50 leading-relaxed mb-5 line-clamp-2">
+                    {project.tagline}
+                  </p>
+
+                  <div className="relative flex flex-wrap gap-1.5 mt-auto">
+                    {project.tech.slice(0, 3).map((t) => (
+                      <span key={t} className="text-[9px] font-bold uppercase tracking-wider text-white/40 border border-white/5 px-2 py-1 rounded-md bg-white/[0.02]">
+                        {t}
+                      </span>
+                    ))}
+                    {project.tech.length > 3 && (
+                      <span className="text-[9px] font-bold uppercase tracking-wider text-white/25 px-2 py-1">
+                        +{project.tech.length - 3}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </Link>
             </motion.div>
