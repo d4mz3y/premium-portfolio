@@ -40,7 +40,8 @@
         "System Security"
       ],
       "image": "/projects/hogan_hub.png",
-      "demoLink": "/demos/hogan_hub.html"
+      "demoLink": "/demos/hogan_hub.html",
+      "projectSlug": "hogan-hub"
     },
     {
       "platform": "Fintech Infrastructure",
