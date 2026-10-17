@@ -1,6 +1,6 @@
 {
   "name": "Ayodamope Medupin",
-  "title": "Senior Frontend Developer & IT Platform Specialist",
+  "title": "Software Engineer — Full-Stack, Security & Systems",
   "contact": {
     "email": "ayodamopemedupin@gmail.com",
     "phone": "09069780664",
@@ -9,25 +9,7 @@
     "linkedin": "https://linkedin.com/in/ayodamope-medupin",
     "github": "https://github.com/d4mz3y"
   },
-  "summary": "With over 4 years of cross-functional expertise, I have engineered 4+ high-impact platforms from the ground up—bridging the gap between sleek frontend architecture and robust system security. From scaling fintech interfaces at Innovated Funded to architecting identity-first modular systems at Hogan Tech, I specialize in delivering code that doesn't just work, but scales and secures.",
-  "stats": [
-    {
-      "label": "Years Experience",
-      "value": "4+"
-    },
-    {
-      "label": "Platforms Built",
-      "value": "4+"
-    },
-    {
-      "label": "Tech Stack",
-      "value": "12+"
-    },
-    {
-      "label": "Focus",
-      "value": "100%"
-    }
-  ],
+  "summary": "I build software across the whole stack — web interfaces, APIs, databases and machine-learning pipelines — and I run the infrastructure it lives on. My work spans production workforce systems, security platforms and research, with security and reliability designed in from the start rather than bolted on.",
   "experience": [
     {
       "platform": "Hogan Hub",

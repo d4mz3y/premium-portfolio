@@ -95,28 +95,15 @@ export const Navbar = () => {
   );
 };
 
-const Clock = () => {
-  const [time, setTime] = useState('');
-  useEffect(() => {
-    const tick = () => {
-      setTime(new Date().toLocaleTimeString('en-GB', { timeZone: 'Africa/Lagos', hour: '2-digit', minute: '2-digit', second: '2-digit' }));
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-  return <span>{time}</span>;
-};
-
 const Hero = () => {
   return (
     <section id="about" className="relative pt-40 pb-24 px-6">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_auto] gap-16 items-end">
+      <div className="max-w-6xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-          <span className="label-mono text-xs text-accent-400 block mb-6">Portfolio / 2026</span>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-light leading-[1.05] text-ink-50 mb-8">
-            {cvData.title.split(' & ')[0]},<br />
-            building things that <em className="text-accent-400 not-italic font-normal">hold up</em>.
+          <span className="label-mono text-xs text-accent-400 block mb-6">{cvData.title}</span>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-light leading-[1.05] text-ink-50 mb-8 max-w-4xl">
+            From the interface<br />
+            to the <span className="text-accent-400 font-normal">infrastructure</span>.
           </h1>
           <p className="text-lg text-ink-300 max-w-xl leading-relaxed mb-10 font-light">
             {cvData.summary}
@@ -131,33 +118,13 @@ const Hero = () => {
             </Magnetic>
           </div>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="card font-mono text-xs text-ink-300 w-full lg:w-72 shrink-0"
-        >
-          <div className="flex justify-between items-center mb-4 pb-4 border-b border-ink-700">
-            <span className="text-ink-500">SYSTEM STATUS</span>
-            <span className="flex items-center gap-2 text-accent-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse" /> AVAILABLE
-            </span>
-          </div>
-          <div className="space-y-3">
-            <div className="flex justify-between"><span className="text-ink-500">Location</span><span className="text-ink-100">{cvData.contact.location}</span></div>
-            <div className="flex justify-between"><span className="text-ink-500">Local time</span><span className="text-ink-100"><Clock /></span></div>
-            <div className="flex justify-between"><span className="text-ink-500">Experience</span><span className="text-ink-100">{cvData.stats[0].value} yrs</span></div>
-            <div className="flex justify-between"><span className="text-ink-500">Platforms shipped</span><span className="text-ink-100">{cvData.stats[1].value}</span></div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
 };
 
 const Marquee = () => {
-  const items = ['Frontend Engineering', 'System Security', 'Platform Architecture', 'Lagos, Nigeria'];
+  const items = ['Full-Stack Engineering', 'Security', 'Systems & Infrastructure', 'Machine Learning', 'Lagos, Nigeria'];
   const track = [...items, ...items];
   return (
     <div className="relative py-5 border-y border-ink-700 overflow-hidden">
@@ -218,7 +185,7 @@ const ProjectsGallery = () => {
             </h2>
           </div>
           <p className="text-sm text-ink-400 max-w-xs font-light">
-            Seven projects, from production systems to research. Every one is real — click through for the case study.
+            From production systems to research. Every one is real — click through for the full story.
           </p>
         </div>
 

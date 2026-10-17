@@ -135,27 +135,6 @@ const projects = [
     ],
     impact: 'Turned a manual, paper-based client intake process into a same-day digital workflow.',
   },
-  {
-    slug: 'invoice-generator',
-    name: 'Invoice Generator',
-    tagline: 'Editable, print-ready invoice/proforma tool',
-    category: 'Frontend tool',
-    tech: ['HTML5', 'Vanilla CSS', 'JavaScript'],
-    year: '2022',
-    isPrivate: true,
-    repoUrl: null,
-    image: '/case-studies/invoice-generator.png',
-    imageNote: 'Shown with placeholder data — the live version contains real client and payment details.',
-    role: 'Sole developer',
-    summary:
-      'A lightweight, dependency-free invoice generator: a live-editable, print-ready proforma/invoice template with auto-calculated totals, built for real client billing use.',
-    highlights: [
-      'Every field is directly editable in-place (contenteditable) — no form, no build step, just open and edit',
-      'Auto-calculated subtotal, tax, and balance rows',
-      'Print-optimized layout for one-click PDF export',
-    ],
-    impact: 'Used for real client invoicing — kept private here since the shipped copy contains live client and payment details.',
-  },
 ]
 
 export default projects
