@@ -64,9 +64,17 @@ body {
   position: relative;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  letter-spacing: -0.01em;
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  /* The private-project demos mimic each product's own look, so they opt out of the site's serif headings */
+  .demo-root :is(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-sans);
+    letter-spacing: normal;
+  }
 }
 
 /* Cursor-following spotlight — replaces static blurred gradient orbs with

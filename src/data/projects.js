@@ -12,7 +12,9 @@ const projects = [
     year: '2026',
     isPrivate: true,
     repoUrl: null,
-    image: '/case-studies/hg-attendance-login.png',
+    image: '/case-studies/hg-attendance-demo.png',
+    demoPath: '/demo/hg-attendance-system',
+    liveNote: 'Interactive demo running on sample data. The real system, its code and its data stay private.',
     role: 'Sole developer & operator',
     summary:
       'An internal attendance, scheduling, leave, and reporting system built for Hogan Guards’ on-the-ground security workforce. Runs in production on a self-hosted Docker stack with an offline-capable kiosk for clock-in/out.',
@@ -38,6 +40,8 @@ const projects = [
     isPrivate: true,
     repoUrl: null,
     image: '/case-studies/hogan-hub.png',
+    demoPath: '/demo/hogan-hub',
+    liveNote: 'Interactive demo running on sample data. The real system, its code and its data stay private.',
     role: 'Sole developer',
     summary:
       'A role-based operations platform for Hogan Tech: separate access tiers for Super Admin, Client Admin, and Field Guard, covering user/permission management, patrol operations, threat intel, and emergency SOS handling.',

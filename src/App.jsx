@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Home from './pages/Home.jsx';
 import ProjectPage from './pages/ProjectPage.jsx';
 import CV from './pages/CV.jsx';
+import HoganHubDemo from './demos/HoganHubDemo.jsx';
+import HGAttendanceDemo from './demos/HGAttendanceDemo.jsx';
 import Cursor from './components/Cursor.jsx';
 
 const PageTransition = ({ children }) => (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/" element={<PageTransition><Home /></PageTransition>} />
           <Route path="/projects/:slug" element={<PageTransition><ProjectPage /></PageTransition>} />
           <Route path="/cv" element={<CV />} />
+          <Route path="/demo/hogan-hub" element={<HoganHubDemo />} />
+          <Route path="/demo/hg-attendance-system" element={<HGAttendanceDemo />} />
         </Routes>
       </AnimatePresence>
     </>
