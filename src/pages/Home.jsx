@@ -193,7 +193,7 @@ const ProjectsGallery = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink-800">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, i) => (
             <motion.div
               key={project.slug}
@@ -201,7 +201,7 @@ const ProjectsGallery = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: (i % 3) * 0.06 }}
-              className="bg-ink-950"
+              className="border border-ink-700 bg-ink-900/40 rounded-xl overflow-hidden transition-colors duration-300 hover:border-accent-500/50"
             >
               <TiltCard className="h-full">
                 <Link to={`/projects/${project.slug}`} className="group relative flex flex-col h-full" data-cursor-hover>
@@ -246,7 +246,7 @@ const ProjectsGallery = () => {
             </motion.div>
           ))}
 
-          <div className={`bg-ink-950 ${GH_SPAN_SM[(projects.length + 1) % 2]} ${GH_SPAN_LG[(3 - ((projects.length + 1) % 3)) % 3]}`}>
+          <div className={`border border-ink-700 bg-ink-900/40 rounded-xl overflow-hidden transition-colors duration-300 hover:border-accent-500/50 ${GH_SPAN_SM[(projects.length + 1) % 2]} ${GH_SPAN_LG[(3 - ((projects.length + 1) % 3)) % 3]}`}>
             <a
               href={cvData.contact.github}
               target="_blank"
