@@ -1,12 +1,12 @@
 // Real projects pulled from GitHub + local repos. Two are kept private
 // (trade-secret backbone code, not for public release) and are shown here
-// as case studies only — no outbound "view code" link for those.
+// as case studies only, with no outbound "view code" link for those.
 
 const projects = [
   {
     slug: 'hg-attendance-system',
     name: 'HG Attendance System',
-    tagline: 'Production attendance, scheduling & payroll platform for a guard workforce',
+    tagline: 'Attendance, scheduling, leave and reporting platform for a guard workforce',
     category: 'Full-stack · Production system',
     tech: ['Laravel 12', 'React 19', 'MySQL 8.4', 'Docker', 'Nginx', 'PHP-FPM', 'TypeORM'],
     year: '2026',
@@ -17,18 +17,18 @@ const projects = [
     liveNote: 'Interactive demo running on sample data. The real system, its code and its data stay private.',
     role: 'Sole developer & operator',
     summary:
-      'An internal attendance, scheduling, leave, and reporting system built for Hogan Guards’ on-the-ground security workforce. Runs in production on a self-hosted Docker stack with an offline-capable kiosk for clock-in/out.',
+      'An internal attendance, scheduling, leave, and reporting system built for Hogan Guards’ on-the-ground security workforce. Built to run in production on a self-hosted Docker stack, with an offline-capable kiosk for clock-in/out.',
     highlights: [
       'Offline-first PWA kiosk (installable service worker) for staff clock-in/out at guard posts with unreliable connectivity',
       'Automatic supersession of stale open sessions, overnight-shift handling, and grace-window scan pairing to keep attendance data accurate without manual correction',
-      'Staff photos served only through short-lived signed URLs — never public storage — to protect personal data',
+      'Staff photos are served only through short-lived signed URLs, never public storage, to protect personal data',
       'Built-in billing: Paystack-powered subscription payments, auto-renewal, receipts, and payment history',
       'Proactive system-health email alerts, automated log/image pruning, and encrypted external-drive backups',
       'Deployed two ways: on-premises via Docker/Nginx with internal-CA HTTPS over ZeroTier, or on an Oracle Cloud Always Free tier for remote offices',
       'Super-admin recovery flow with session revocation, designed so a forgotten password can never lock the whole org out',
     ],
     impact:
-      'Replaced a manual, paper-based attendance and leave process with a system guards and administrators use daily — including scheduling, payroll-adjacent reporting, and billing.',
+      'A complete attendance, scheduling, leave, reporting and billing system, with deployment, backup and recovery procedures documented.',
   },
   {
     slug: 'hogan-hub',
@@ -72,14 +72,14 @@ const projects = [
     summary:
       'A runnable multimodal deep-learning system that combines DistilBERT email-text embeddings with a metadata neural network and late fusion, served through a Flask dashboard with real-time predictions and explainability.',
     highlights: [
-      '98.26% accuracy / 99.75% ROC-AUC on a held-out 460-email test set (3,065-row stratified split, seed 42) — fully reproducible and documented in a model card',
+      '98.26% accuracy / 99.75% ROC-AUC on a held-out 460-email test set (3,065-row stratified split, seed 42). Fully reproducible and documented in a model card',
       'Frozen DistilBERT text encoder fused with a 15-feature sender/receiver/message/URL metadata branch via a late-fusion classifier',
-      'Kernel SHAP explanations for metadata attribution, plus DistilBERT final-layer attention visualization — the tool shows *why* it flagged an email, not just that it did',
+      'Kernel SHAP explanations for metadata attribution, plus DistilBERT final-layer attention visualization, so the tool shows why it flagged an email, not just that it did',
       '.eml / .txt import for real-world email analysis',
       'Automatic heuristic fallback if model artifacts are unavailable, so the app degrades gracefully rather than failing',
     ],
     impact:
-      'Built as a dissertation-grade research project, with verified metrics kept separate from any originally reported results — provenance and limitations documented rather than asserted.',
+      'Built as a dissertation-grade research project, with verified metrics kept separate from any originally reported results. Provenance and limitations are documented rather than asserted.',
   },
   {
     slug: 'advanta-ai',
@@ -94,18 +94,18 @@ const projects = [
     liveUrl: 'https://d4mz3y.github.io/AdVanta-AI/',
     role: 'Frontend developer',
     summary:
-      'A full marketing site for an AI-driven growth product — hero, problem framing, services, process, audience segmentation, pricing, and conversion sections, built as independent, composable React components.',
+      'A full marketing site for an AI-driven growth product: hero, problem framing, services, process, audience segmentation, pricing, and conversion sections, built as independent, composable React components.',
     highlights: [
       'Eleven-section one-page structure (Hero, Ticker, Problem, Services, Process, Who We Serve, AI Edge, Pricing, CTA) built as isolated, reusable components',
       'Scroll-reveal animation component shared across sections for a consistent motion language',
       'Production-instrumented with Vercel Analytics and Speed Insights from day one',
     ],
-    impact: 'A complete, launch-ready marketing site — not a template, a full component-driven build.',
+    impact: 'A complete, launch-ready marketing site, built component by component.',
   },
   {
     slug: 'leadbybooks',
     name: 'LeadByBooks',
-    tagline: 'A social reading platform — books, audiobooks, podcasts & community',
+    tagline: 'A social reading platform: books, audiobooks, podcasts & community',
     category: 'Full-stack · Vue / Nuxt',
     tech: ['Nuxt 3', 'Vue', 'Prisma', 'TailwindCSS', 'TypeScript'],
     year: '2026',
@@ -121,7 +121,7 @@ const projects = [
       'Prisma schema-driven data layer, shared layout and navbar/footer components across the app',
       'TailwindCSS design system configured from scratch for the project',
     ],
-    impact: 'A genuinely broad product surface for a solo build — reading, listening, and community in one app.',
+    impact: 'A genuinely broad product surface for a solo build: reading, listening, and community in one app.',
   },
   {
     slug: 'feedback-system',
@@ -134,7 +134,7 @@ const projects = [
     repoUrl: 'https://github.com/d4mz3y/Feedback-System',
     image: '/case-studies/feedback-system.png',
     liveUrl: 'https://d4mz3y.github.io/Feedback-System/',
-    liveNote: 'Demo build — submissions are simulated, nothing is stored or emailed.',
+    liveNote: 'Demo build: submissions are simulated, nothing is stored or emailed.',
     role: 'Sole developer',
     summary:
       'Replaces the paper Know-Your-Client form used when onboarding a new client for guard deployment, with real-time validation, automated email notifications, and an admin dashboard to review submissions.',

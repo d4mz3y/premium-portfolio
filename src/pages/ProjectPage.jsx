@@ -112,7 +112,7 @@ function ProjectPage() {
           <div className="flex items-start gap-3 text-sm text-ink-400 border border-ink-700 px-5 py-4 font-light">
             <Lock size={16} className="mt-0.5 shrink-0 text-ink-600" />
             <span>
-              This is proprietary / commercial work — the source stays private, so this page is a written case study rather than a code walkthrough.
+              This is proprietary / commercial work. The source stays private, so this page is a written case study rather than a code walkthrough.
             </span>
           </div>
         </div>

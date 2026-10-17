@@ -295,7 +295,7 @@ export default function HoganHubDemo() {
 
   const pick = (r) => {
     setRole(r.id);
-    setEvents([{ text: `${r.person} signed in`, time: stamp() }, { text: 'Failed sign-in: unknown account (blocked)', time: '—' }]);
+    setEvents([{ text: `${r.person} signed in`, time: stamp() }, { text: 'Failed sign-in: unknown account (blocked)', time: 'n/a' }]);
     setActive(MODULES.find((m) => m.roles.includes(r.id)).id);
   };
 
