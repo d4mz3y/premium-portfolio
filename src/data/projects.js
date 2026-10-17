@@ -154,6 +154,8 @@ const projects = [
     isPrivate: false,
     repoUrl: 'https://github.com/BrainClasson/Classon',
     image: '/case-studies/classon/landing.jpg',
+    liveUrl: 'https://d4mz3y.github.io/Classon/',
+    liveNote: 'Public demo copy. Third-party lesson media from the original is left out.',
     role: 'Lead developer (34 of 36 commits)',
     summary:
       'A hand-built front end for a children\u2019s early-learning product. Kids sign in with their own account, work through lessons by letter and subject, and parents get a separate dashboard to follow progress.',
@@ -174,6 +176,28 @@ const projects = [
     ],
     impact:
       'Built in about five weeks (July to August 2022), almost entirely solo, as a working click-through of the full learning experience.',
+  },
+  {
+    slug: 'innovated-funded',
+    name: 'Innovated Funded',
+    tagline: 'Responsive front end for an investment platform: waiting-list landing page, dashboard and trading pages',
+    category: 'Frontend · Fintech',
+    tech: ['Vue.js', 'Tailwind CSS', 'HTML5'],
+    year: '2023',
+    isPrivate: true,
+    repoUrl: null,
+    role: 'Frontend contributor',
+    summary:
+      'Front-end pages for a fintech investment platform, built as part of a small team: a waiting-list landing page and a set of Tailwind-built pages for the platform itself.',
+    highlights: [
+      'A waiting-list landing page with a step-by-step \u201chow it works\u201d section and an FAQ',
+      'Platform pages built in HTML and Tailwind CSS: a dashboard, an affiliate programme page and trading-model pages',
+      'The compliance pages a financial product needs: terms and conditions, privacy policy, risk disclosure and regulations',
+      'A shared Tailwind theme, with the brand colours defined once in the Tailwind config and reused across pages',
+      'Responsive layouts using Tailwind breakpoints',
+    ],
+    impact:
+      'A team project from November 2023. The work was pushed to the team\u2019s private repositories by a teammate, so it does not appear under my own GitHub commits.',
   },
 ]
 

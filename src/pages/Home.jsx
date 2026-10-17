@@ -201,6 +201,11 @@ const ProjectsGallery = () => {
             >
               <TiltCard className="h-full">
                 <Link to={`/projects/${project.slug}`} className="group relative flex flex-col h-full" data-cursor-hover>
+                  {!project.image && (
+                    <div className="relative aspect-video bg-ink-900 border-b border-ink-800 flex items-center justify-center px-6">
+                      <span className="font-display text-4xl text-ink-600 font-light text-center leading-tight group-hover:text-accent-500/70 transition-colors">{project.name}</span>
+                    </div>
+                  )}
                   {project.image && (
                     <div className="relative aspect-video overflow-hidden bg-ink-900">
                       <img
@@ -236,6 +241,27 @@ const ProjectsGallery = () => {
               </TiltCard>
             </motion.div>
           ))}
+
+          <div className="bg-ink-950">
+            <a
+              href={cvData.contact.github}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex h-full min-h-[16rem] flex-col justify-between p-6"
+              data-cursor-hover
+            >
+              <span className="label-mono text-[10px] text-ink-500">Archive</span>
+              <div>
+                <h3 className="font-display text-2xl text-ink-50 group-hover:text-accent-400 transition-colors mb-2">More on GitHub</h3>
+                <p className="text-sm text-ink-400 font-light mb-4">Smaller experiments, coursework and earlier work.</p>
+                <ArrowUpRight size={18} className="text-ink-600 group-hover:text-accent-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              </div>
+            </a>
+          </div>
+          {Array.from({ length: (3 - ((projects.length + 1) % 3)) % 3 }).map((_, i) => (
+            <div key={`lg-fill-${i}`} className="hidden lg:block bg-ink-950" />
+          ))}
+          {(projects.length + 1) % 2 === 1 && <div className="hidden sm:block lg:hidden bg-ink-950" />}
         </div>
       </div>
     </section>
