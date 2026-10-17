@@ -323,44 +323,46 @@ const Skills = () => {
 };
 
 export const Footer = () => {
-  const link = 'flex items-center justify-center gap-3 text-ink-300 hover:text-accent-400 transition-colors';
-  const round = 'p-3 rounded-full border border-ink-700 hover:border-accent-500 hover:text-accent-400 transition-all text-ink-300';
   return (
-    <footer id="contact" className="pt-24 pb-10 px-6 border-t border-ink-700 text-center">
+    <footer id="contact" className="pt-24 pb-10 px-6 border-t border-ink-700">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-light text-ink-50 mb-6">
-          Let's <span className="text-accent-400 font-normal">talk</span>.
-        </h2>
-        <p className="text-ink-400 mb-10 max-w-md mx-auto font-light">
-          Whether it's a new opportunity or just a chat about technology, my inbox is always open.
-        </p>
+        <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h2 className="text-4xl sm:text-5xl font-light text-ink-50 mb-6">
+              Let's <span className="text-accent-400 font-normal">talk</span>.
+            </h2>
+            <p className="text-ink-400 mb-8 max-w-md font-light">
+              Whether it's a new opportunity or just a chat about technology, my inbox is always open.
+            </p>
+            <div className="flex flex-col gap-3 items-start">
+              <a href={`mailto:${cvData.contact.email}`} className="flex items-center gap-3 text-ink-300 hover:text-accent-400 transition-colors" data-cursor-hover>
+                <Mail size={16} /> <span className="text-sm">{cvData.contact.email}</span>
+              </a>
+              <a href={`tel:${cvData.contact.phone}`} className="flex items-center gap-3 text-ink-300 hover:text-accent-400 transition-colors" data-cursor-hover>
+                <Phone size={16} /> <span className="text-sm">{cvData.contact.phone}</span>
+              </a>
+              <a href={`https://wa.me/${cvData.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-ink-300 hover:text-accent-400 transition-colors" data-cursor-hover>
+                <MessageCircle size={16} /> <span className="text-sm">WhatsApp</span>
+              </a>
+              <div className="flex items-center gap-3 text-ink-500">
+                <MapPin size={16} /> <span className="text-sm">{cvData.contact.location}</span>
+              </div>
+            </div>
+          </div>
 
-        <div className="flex flex-col gap-3 items-center mb-10">
-          <a href={`mailto:${cvData.contact.email}`} className={link} data-cursor-hover>
-            <Mail size={16} /> <span className="text-sm">{cvData.contact.email}</span>
-          </a>
-          <a href={`tel:${cvData.contact.phone}`} className={link} data-cursor-hover>
-            <Phone size={16} /> <span className="text-sm">{cvData.contact.phone}</span>
-          </a>
-          <a href={`https://wa.me/${cvData.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noreferrer" className={link} data-cursor-hover>
-            <MessageCircle size={16} /> <span className="text-sm">WhatsApp</span>
-          </a>
-          <div className="flex items-center justify-center gap-3 text-ink-500">
-            <MapPin size={16} /> <span className="text-sm">{cvData.contact.location}</span>
+          <div className="flex flex-col justify-end items-start md:items-end gap-4">
+            <div className="flex gap-4">
+              <a href={cvData.contact.linkedin} target="_blank" rel="noreferrer" className="p-3 rounded-full border border-ink-700 hover:border-accent-500 hover:text-accent-400 transition-all text-ink-300" aria-label="LinkedIn" data-cursor-hover>
+                <Linkedin size={18} />
+              </a>
+              <a href={cvData.contact.github} target="_blank" rel="noreferrer" className="p-3 rounded-full border border-ink-700 hover:border-accent-500 hover:text-accent-400 transition-all text-ink-300" aria-label="GitHub" data-cursor-hover>
+                <Github size={18} />
+              </a>
+            </div>
           </div>
         </div>
-
-        <div className="flex justify-center gap-4 mb-16">
-          <a href={cvData.contact.linkedin} target="_blank" rel="noreferrer" className={round} aria-label="LinkedIn" data-cursor-hover>
-            <Linkedin size={18} />
-          </a>
-          <a href={cvData.contact.github} target="_blank" rel="noreferrer" className={round} aria-label="GitHub" data-cursor-hover>
-            <Github size={18} />
-          </a>
-        </div>
-
-        <div className="text-ink-600 text-xs label-mono border-t border-ink-800 pt-8">
-          {cvData.name} © {new Date().getFullYear()}
+        <div className="text-center text-ink-600 text-xs label-mono border-t border-ink-800 pt-8">
+          Damxey © {new Date().getFullYear()}
         </div>
       </div>
     </footer>
