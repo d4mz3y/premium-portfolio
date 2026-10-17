@@ -156,21 +156,21 @@ function ProjectPage() {
         </aside>
       </main>
 
-      {project.gallery && project.gallery.length > 0 && (
-        <section className="max-w-4xl mx-auto px-6 pb-20">
-          <span className="label-mono text-xs text-accent-400 block mb-6">Screens</span>
+      {(project.galleries || (project.gallery ? [{ title: 'Screens', items: project.gallery }] : [])).map((g) => (
+        <section key={g.title} className="max-w-4xl mx-auto px-6 pb-20">
+          <span className="label-mono text-xs text-accent-400 block mb-6">{g.title}</span>
           <div className="grid sm:grid-cols-2 gap-6">
-            {project.gallery.map((g) => (
-              <figure key={g.src}>
+            {g.items.map((it) => (
+              <figure key={it.src}>
                 <div className="overflow-hidden border border-ink-700">
-                  <img src={g.src} alt={g.caption} loading="lazy" className="w-full h-auto block" />
+                  <img src={it.src} alt={it.caption} loading="lazy" className="w-full h-auto block" />
                 </div>
-                <figcaption className="text-xs text-ink-500 mt-2 font-light">{g.caption}</figcaption>
+                <figcaption className="text-xs text-ink-500 mt-2 font-light">{it.caption}</figcaption>
               </figure>
             ))}
           </div>
         </section>
-      )}
+      ))}
 
       <div className="max-w-4xl mx-auto px-6 pb-24">
         <Link
