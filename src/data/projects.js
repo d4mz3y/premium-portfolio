@@ -144,6 +144,37 @@ const projects = [
     ],
     impact: 'Turned a manual, paper-based client intake process into a same-day digital workflow.',
   },
+  {
+    slug: 'classon',
+    name: 'Classon',
+    tagline: 'A learning platform for young children: lessons, songs, worksheets and a parents\u2019 view',
+    category: 'Frontend · E-learning',
+    tech: ['HTML5', 'CSS3', 'JavaScript'],
+    year: '2022',
+    isPrivate: false,
+    repoUrl: 'https://github.com/BrainClasson/Classon',
+    image: '/case-studies/classon/landing.jpg',
+    role: 'Lead developer (34 of 36 commits)',
+    summary:
+      'A hand-built front end for a children\u2019s early-learning product. Kids sign in with their own account, work through lessons by letter and subject, and parents get a separate dashboard to follow progress.',
+    highlights: [
+      'Fourteen hand-built screens in roughly 2,800 lines of plain HTML, CSS and JavaScript, with no framework: sign-up, sign-in, student dashboard, subject breakdown, video and song lessons, worksheets and a book view',
+      'Lessons are organised by subject (Diction, Numeracy, Story, Moral) and then by letter, each with its own video, book, song, workbook and worksheet',
+      'A \u201cwatch all to unlock next\u201d progression step on the student dashboard',
+      'A flip-book for the alphabet book with page-turning built in JavaScript',
+      'A parents\u2019 dashboard showing class attendance, videos watched, test scores and a calendar',
+      'A shared page template so new lesson screens could be added quickly',
+    ],
+    gallery: [
+      { src: '/case-studies/classon/dashboard.jpg', caption: 'Student dashboard: subjects' },
+      { src: '/case-studies/classon/lessons.jpg', caption: 'Lessons for a letter: video, book, song, workbook, worksheet' },
+      { src: '/case-studies/classon/sign-in.jpg', caption: 'Sign-in for a child account or a parent' },
+      { src: '/case-studies/classon/worksheet.jpg', caption: 'Trace-the-letter worksheet' },
+      { src: '/case-studies/classon/flipbook.jpg', caption: 'Flip-book alphabet reader' },
+    ],
+    impact:
+      'Built in about five weeks (July to August 2022), almost entirely solo, as a working click-through of the full learning experience.',
+  },
 ]
 
 export default projects
