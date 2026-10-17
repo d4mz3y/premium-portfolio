@@ -173,6 +173,10 @@ const ExperienceStrip = () => {
   );
 };
 
+// The GitHub card absorbs leftover grid cells so the last row never has gaps. Classes are spelled out so Tailwind keeps them.
+const GH_SPAN_SM = { 0: '', 1: 'sm:col-span-2' }
+const GH_SPAN_LG = { 0: 'lg:col-span-1', 1: 'lg:col-span-2', 2: 'lg:col-span-3' }
+
 const ProjectsGallery = () => {
   return (
     <section id="work" className="py-24 px-6">
@@ -242,7 +246,7 @@ const ProjectsGallery = () => {
             </motion.div>
           ))}
 
-          <div className="bg-ink-950">
+          <div className={`bg-ink-950 ${GH_SPAN_SM[(projects.length + 1) % 2]} ${GH_SPAN_LG[(3 - ((projects.length + 1) % 3)) % 3]}`}>
             <a
               href={cvData.contact.github}
               target="_blank"
@@ -258,10 +262,6 @@ const ProjectsGallery = () => {
               </div>
             </a>
           </div>
-          {Array.from({ length: (3 - ((projects.length + 1) % 3)) % 3 }).map((_, i) => (
-            <div key={`lg-fill-${i}`} className="hidden lg:block bg-ink-950" />
-          ))}
-          {(projects.length + 1) % 2 === 1 && <div className="hidden sm:block lg:hidden bg-ink-950" />}
         </div>
       </div>
     </section>

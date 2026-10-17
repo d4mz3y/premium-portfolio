@@ -80,6 +80,14 @@ function ProjectPage() {
               )}
             </div>
           )}
+          {project.related && (
+            <p className="text-sm text-ink-400 mt-6 font-light">
+              See also:{' '}
+              <Link to={`/projects/${project.related.slug}`} className="text-accent-400 hover:text-accent-300 underline underline-offset-4" data-cursor-hover>
+                {project.related.label}
+              </Link>
+            </p>
+          )}
         </div>
       </header>
 
