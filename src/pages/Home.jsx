@@ -210,6 +210,12 @@ const ProjectsGallery = () => {
                         className="w-full h-full object-cover object-top grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
                       />
                       <div className="absolute inset-0 bg-accent-600/0 group-hover:bg-accent-600/10 transition-colors duration-500" />
+                      {(project.liveUrl || project.demoPath) && (
+                        <span className="absolute top-3 left-3 label-mono text-[10px] bg-ink-950/85 text-accent-400 px-2.5 py-1 rounded flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent-400" />
+                          {project.liveUrl ? 'Live' : 'Demo'}
+                        </span>
+                      )}
                     </div>
                   )}
                   <div className="p-6 flex flex-col flex-1">

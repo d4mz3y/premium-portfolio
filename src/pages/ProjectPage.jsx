@@ -56,13 +56,30 @@ function ProjectPage() {
             {project.tagline}
           </p>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mb-10">
             {project.tech.map((t) => (
               <span key={t} className="label-mono text-[10px] text-ink-400 border border-ink-700 px-3 py-1.5 rounded">
                 {t}
               </span>
             ))}
           </div>
+
+          {(project.liveUrl || project.demoPath) && (
+            <div>
+              {project.liveUrl ? (
+                <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn-primary" data-cursor-hover>
+                  Open live site <ArrowUpRight size={16} />
+                </a>
+              ) : (
+                <Link to={project.demoPath} className="btn-primary" data-cursor-hover>
+                  Launch interactive demo <ArrowUpRight size={16} />
+                </Link>
+              )}
+              {project.liveNote && (
+                <p className="text-xs text-ink-500 mt-3 font-light">{project.liveNote}</p>
+              )}
+            </div>
+          )}
         </div>
       </header>
 

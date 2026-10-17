@@ -53,14 +53,15 @@ const projects = [
   },
   {
     slug: 'phishing-detection-app',
-    name: 'AI Phishing Email Detector',
+    name: 'PhishGuard AI',
     tagline: 'Multimodal deep-learning system for real-time phishing detection',
     category: 'Machine learning · Security',
     tech: ['Python', 'Flask', 'PyTorch', 'DistilBERT', 'SHAP', 'Transformers'],
     year: '2026',
     isPrivate: false,
     repoUrl: 'https://github.com/d4mz3y/phishing-detection-app',
-    image: '/case-studies/phishing-detection-result.png',
+    image: '/case-studies/phishguard-ai.png',
+    liveUrl: null,
     role: 'Sole developer & researcher',
     summary:
       'A runnable multimodal deep-learning system that combines DistilBERT email-text embeddings with a metadata neural network and late fusion, served through a Flask dashboard with real-time predictions and explainability.',
@@ -84,6 +85,7 @@ const projects = [
     isPrivate: false,
     repoUrl: 'https://github.com/d4mz3y/AdVanta-AI',
     image: '/case-studies/advanta-ai.png',
+    liveUrl: 'https://d4mz3y.github.io/AdVanta-AI/',
     role: 'Frontend developer',
     summary:
       'A full marketing site for an AI-driven growth product — hero, problem framing, services, process, audience segmentation, pricing, and conversion sections, built as independent, composable React components.',
@@ -95,8 +97,8 @@ const projects = [
     impact: 'A complete, launch-ready marketing site — not a template, a full component-driven build.',
   },
   {
-    slug: 'library-project',
-    name: 'Library Project',
+    slug: 'leadbybooks',
+    name: 'LeadByBooks',
     tagline: 'A social reading platform — books, audiobooks, podcasts & community',
     category: 'Full-stack · Vue / Nuxt',
     tech: ['Nuxt 3', 'Vue', 'Prisma', 'TailwindCSS', 'TypeScript'],
@@ -104,6 +106,7 @@ const projects = [
     isPrivate: false,
     repoUrl: 'https://github.com/d4mz3y/Library-Project',
     image: '/case-studies/library-project.png',
+    liveUrl: 'https://d4mz3y.github.io/Library-Project/',
     role: 'Sole developer',
     summary:
       'An ambitious digital-library concept that goes beyond a book catalog: books, audiobooks, podcasts, live chatrooms, even a chess page, backed by a Prisma-modeled database and built on Nuxt 3.',
@@ -124,6 +127,8 @@ const projects = [
     isPrivate: false,
     repoUrl: 'https://github.com/d4mz3y/Feedback-System',
     image: '/case-studies/feedback-system.png',
+    liveUrl: 'https://d4mz3y.github.io/Feedback-System/',
+    liveNote: 'Demo build — submissions are simulated, nothing is stored or emailed.',
     role: 'Sole developer',
     summary:
       'Replaces the paper Know-Your-Client form used when onboarding a new client for guard deployment, with real-time validation, automated email notifications, and an admin dashboard to review submissions.',
