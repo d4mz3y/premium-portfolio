@@ -99,7 +99,20 @@ function ProjectPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="overflow-hidden border border-ink-700"
           >
-            <img src={project.image} alt={project.name} className="w-full h-auto block" />
+            {project.video ? (
+              <video
+                src={project.video}
+                poster={project.image}
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full h-auto block bg-ink-900"
+              >
+                Your browser cannot play this video.
+              </video>
+            ) : (
+              <img src={project.image} alt={project.name} className="w-full h-auto block" />
+            )}
           </motion.div>
           {project.imageNote && (
             <p className="text-xs text-ink-600 mt-3 italic font-light">{project.imageNote}</p>

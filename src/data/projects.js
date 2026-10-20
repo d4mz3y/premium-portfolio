@@ -67,6 +67,8 @@ const projects = [
     isPrivate: false,
     repoUrl: 'https://github.com/d4mz3y/phishing-detection-app',
     image: '/case-studies/phishguard-ai.png',
+    video: '/case-studies/phishguard-demo.mp4',
+    imageNote: 'Recorded walkthrough of the app running locally on the trained model: a legitimate email, a phishing email, then the performance page. There is no hosted version; the repository includes setup instructions and a Dockerfile.',
     liveUrl: null,
     role: 'Sole developer & researcher',
     summary:
@@ -231,7 +233,7 @@ const projects = [
       },
     ],
     impact:
-      'A team project from 2023. The built pages live in the team\u2019s private repositories, so there is no code link; the design is shown here instead.',
+      'A team project from 2023. The team\u2019s built pages live in private repositories, and the source of my own Vue 3 implementation of the design is in a private repository of mine. There is no public code link, so the design is shown here.',
   },
 ]
 
